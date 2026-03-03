@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReparePhone - Nos Boutiques de Réparation à Toulouse</title>
-    <meta name="description" content="Découvrez notre boutique de réparation de téléphone à Toulouse. Service express, garantie 6 mois, pièces d'origine.">
-    
+    <meta name="description"
+        content="Découvrez notre boutique de réparation de téléphone à Toulouse. Service express, garantie 6 mois, pièces d'origine.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
@@ -13,26 +15,26 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         body {
             overflow-x: hidden;
             background: linear-gradient(to bottom, #111827 0%, #1f2937 50%, #000000 100%);
             min-height: 100vh;
             position: relative;
         }
-        
+
         /* Fond global avec grid pattern (comme footer) */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
         }
-        
+
         /* Bulles de lumière globales (comme footer) */
         body::after {
             content: '';
@@ -41,14 +43,14 @@
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .global-light-bubbles {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .global-light-bubbles::before {
             content: '';
             position: absolute;
@@ -61,7 +63,7 @@
             mix-blend-mode: screen;
             filter: blur(96px);
         }
-        
+
         .global-light-bubbles::after {
             content: '';
             position: absolute;
@@ -74,12 +76,12 @@
             mix-blend-mode: screen;
             filter: blur(96px);
         }
-        
+
         /* Futuristic tabs */
         .tab-container {
             position: relative;
         }
-        
+
         .tab-button {
             position: relative;
             padding: 1rem 2rem;
@@ -92,7 +94,7 @@
             border-radius: 12px 12px 0 0;
             overflow: hidden;
         }
-        
+
         .tab-button::before {
             content: '';
             position: absolute;
@@ -101,18 +103,18 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .tab-button:hover::before {
             opacity: 1;
         }
-        
+
         .tab-button.active {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
             border-color: rgba(59, 130, 246, 0.6);
             color: white;
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
         }
-        
+
         .tab-button.active::after {
             content: '';
             position: absolute;
@@ -123,32 +125,38 @@
             background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
             animation: shimmer 2s infinite;
         }
-        
+
         .tab-content {
             display: none;
             animation: fadeInUp 0.5s ease;
         }
-        
+
         .tab-content.active {
             display: block;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translate3d(0, 30px, 0);
             }
+
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
             }
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: -100% 0; }
-            100% { background-position: 100% 0; }
+            0% {
+                background-position: -100% 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
         }
-        
+
         /* Boutique card */
         .boutique-card {
             background: rgba(255, 255, 255, 0.05);
@@ -160,7 +168,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .boutique-card::before {
             content: '';
             position: absolute;
@@ -170,18 +178,18 @@
             transition: opacity 0.3s;
             pointer-events: none;
         }
-        
+
         .boutique-card:hover::before {
             opacity: 1;
         }
-        
+
         .boutique-card:hover {
             transform: translate3d(0, -10px, 0);
             border-color: rgba(59, 130, 246, 0.5);
             box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3),
-                        0 0 40px rgba(139, 92, 246, 0.2);
+                0 0 40px rgba(139, 92, 246, 0.2);
         }
-        
+
         /* Map container */
         .map-container {
             border-radius: 16px;
@@ -190,12 +198,12 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .map-container:hover {
             border-color: rgba(59, 130, 246, 0.6);
             box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
         }
-        
+
         /* Info card */
         .info-card {
             background: rgba(255, 255, 255, 0.03);
@@ -205,13 +213,13 @@
             padding: 1.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .info-card:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(59, 130, 246, 0.4);
             transform: translate3d(0, -5px, 0);
         }
-        
+
         /* Button styles */
         .btn-futuristic {
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -226,7 +234,7 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
-        
+
         .btn-futuristic::before {
             content: '';
             position: absolute;
@@ -235,32 +243,32 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .btn-futuristic:hover::before {
             opacity: 1;
         }
-        
+
         .btn-futuristic:hover {
             transform: translate3d(0, -3px, 0);
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
         }
-        
+
         .btn-futuristic span {
             position: relative;
             z-index: 1;
         }
-        
+
         /* Icon glow */
         .icon-glow {
             filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
             transition: all 0.3s ease;
         }
-        
+
         .icon-glow:hover {
             filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.9));
             transform: scale(1.1);
         }
-        
+
         /* Particle background */
         .particles-bg {
             position: fixed;
@@ -269,7 +277,7 @@
             z-index: 0;
             overflow: hidden;
         }
-        
+
         .particle {
             position: absolute;
             width: 4px;
@@ -279,66 +287,71 @@
             animation: particle-float linear infinite;
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
         }
-        
+
         @keyframes particle-float {
             0% {
                 transform: translate3d(0, 100vh, 0) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translate3d(100px, -100vh, 0) rotate(360deg);
                 opacity: 0;
             }
         }
-        
+
         /* Content wrapper */
         .content-wrapper {
             position: relative;
             z-index: 1;
         }
-        
+
         /* Title glow */
         .title-glow {
             text-shadow: 0 0 30px rgba(59, 130, 246, 0.8),
-                         0 0 60px rgba(139, 92, 246, 0.6);
+                0 0 60px rgba(139, 92, 246, 0.6);
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .tab-button {
                 padding: 0.75rem 1rem;
                 font-size: 0.875rem;
             }
-            
+
             .boutique-card {
                 padding: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Bulles de lumière globales -->
     <div class="global-light-bubbles"></div>
-    
+
     <!-- Particle Background -->
     <div class="particles-bg" id="particles"></div>
-    
+
     <!-- Header -->
     <header class="relative z-10 py-6 px-6">
         <div class="container mx-auto">
-            <a href="index.html" class="inline-flex items-center gap-3 text-white hover:text-blue-400 transition-colors">
+            <a href="index.html"
+                class="inline-flex items-center gap-3 text-white hover:text-blue-400 transition-colors">
                 <i data-feather="arrow-left" class="w-6 h-6"></i>
                 <span class="text-lg font-semibold">Retour à l'accueil</span>
             </a>
         </div>
     </header>
-    
+
     <!-- Main Content -->
     <main class="content-wrapper py-12 px-6">
         <div class="container mx-auto max-w-7xl">
@@ -351,7 +364,7 @@
                     Trouvez la boutique la plus proche et bénéficiez d'un service rapide et de qualité
                 </p>
             </div>
-            
+
             <!-- Tabs -->
             <div class="tab-container mb-8">
                 <div class="flex flex-wrap gap-4 justify-center">
@@ -363,7 +376,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Tab Contents -->
             <div class="tab-content active" id="toulouse">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -374,29 +387,26 @@
                             Localisation
                         </h2>
                         <div class="map-container">
-                            <iframe 
+                            <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.879460461421!2d1.4442463154992915!3d43.60465207912379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc9c43f!2sToulouse!5e0!3m2!1sfr!2sfr!4v1610000000000"
-                                width="100%" 
-                                height="400" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy"
+                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                                 class="rounded-lg">
                             </iframe>
                         </div>
                     </div>
-                    
+
                     <!-- Info -->
                     <div class="boutique-card">
                         <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                             <i data-feather="info" class="w-6 h-6 icon-glow"></i>
                             Informations de la Boutique
                         </h2>
-                        
+
                         <!-- Address -->
                         <div class="info-card mb-4">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <i data-feather="map-pin" class="w-6 h-6 text-blue-400"></i>
                                 </div>
                                 <div>
@@ -405,19 +415,22 @@
                                         65 Route de Blagnac<br>
                                         31300 Toulouse<br>
                                         <span class="inline-flex items-center gap-2 mt-2">
-                                            <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">L1</span>
-                                            <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold">70</span>
+                                            <span
+                                                class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">L1</span>
+                                            <span
+                                                class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold">70</span>
                                             <span class="text-sm text-gray-400">— Arrêt "Cité Madrid"</span>
                                         </span>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Services -->
                         <div class="info-card mb-4">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <i data-feather="tool" class="w-6 h-6 text-purple-400"></i>
                                 </div>
                                 <div>
@@ -439,11 +452,12 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Rating -->
                         <div class="info-card mb-4">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <i data-feather="star" class="w-6 h-6 text-yellow-400"></i>
                                 </div>
                                 <div>
@@ -454,18 +468,22 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Contact Info -->
                         <div class="mb-6">
                             <h3 class="font-semibold text-white mb-4">Contact :</h3>
                             <div class="space-y-3">
-                                <a href="tel:0561234567" class="btn-futuristic w-full inline-flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                <a href="tel:0561234567"
+                                    class="btn-futuristic w-full inline-flex items-center justify-center gap-2"
+                                    style="background: linear-gradient(135deg, #10b981, #059669);">
                                     <span>
                                         <i data-feather="phone" class="w-5 h-5"></i>
                                     </span>
-                                    <span>05 61 23 45 67</span>
+                                    <span>07 56 91 65 93</span>
                                 </a>
-                                <a href="services.html" class="btn-futuristic w-full inline-flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <a href="services.html"
+                                    class="btn-futuristic w-full inline-flex items-center justify-center gap-2"
+                                    style="background: linear-gradient(135deg, #f59e0b, #d97706);">
                                     <span>
                                         <i data-feather="dollar-sign" class="w-5 h-5"></i>
                                     </span>
@@ -473,11 +491,12 @@
                                 </a>
                             </div>
                         </div>
-                        
+
                         <!-- Hours -->
                         <div class="info-card">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <i data-feather="clock" class="w-6 h-6 text-green-400"></i>
                                 </div>
                                 <div>
@@ -494,32 +513,40 @@
             </div>
         </div>
     </main>
-    
+
     <!-- Footer Futuriste -->
     <footer class="relative mt-20 overflow-hidden">
         <!-- Background avec effets -->
         <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-black"></div>
-        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
-        <div class="absolute inset-0">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+        <div class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 50px 50px;">
         </div>
-        
+        <div class="absolute inset-0">
+            <div
+                class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20">
+            </div>
+        </div>
+
         <!-- Contenu du footer -->
         <div class="relative z-10 container mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Logo et Description -->
                 <div class="lg:col-span-1">
-                    <h3 class="text-2xl font-bold text-white mb-4" style="text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);">ReparePhone</h3>
+                    <h3 class="text-2xl font-bold text-white mb-4"
+                        style="text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);">ReparePhone</h3>
                     <p class="text-gray-400 mb-6 leading-relaxed">
-                        Votre expert en réparation de téléphone à Toulouse. Service rapide, pièces d'origine, garantie 6 mois.
+                        Votre expert en réparation de téléphone à Toulouse. Service rapide, pièces d'origine, garantie 6
+                        mois.
                     </p>
                     <div class="flex items-center gap-2 text-sm text-gray-400">
                         <i data-feather="star" class="w-4 h-4 text-yellow-400"></i>
                         <span>4.9/5 ⭐ (200+ avis)</span>
                     </div>
                 </div>
-                
+
                 <!-- Navigation -->
                 <div>
                     <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -528,26 +555,30 @@
                     </h4>
                     <ul class="space-y-3">
                         <li>
-                            <a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
+                            <a href="index.html"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
                                 <i data-feather="home" class="w-4 h-4 group-hover:text-blue-400 transition-colors"></i>
                                 Accueil
                             </a>
                         </li>
                         <li>
-                            <a href="services.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
+                            <a href="services.html"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
                                 <i data-feather="tool" class="w-4 h-4 group-hover:text-blue-400 transition-colors"></i>
                                 Nos Services
                             </a>
                         </li>
                         <li>
-                            <a href="boutiques.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
-                                <i data-feather="map-pin" class="w-4 h-4 group-hover:text-blue-400 transition-colors"></i>
+                            <a href="boutiques.html"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
+                                <i data-feather="map-pin"
+                                    class="w-4 h-4 group-hover:text-blue-400 transition-colors"></i>
                                 Nos Boutiques
                             </a>
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact -->
                 <div>
                     <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -561,7 +592,8 @@
                                 <p>65 Route de Blagnac</p>
                                 <p>31300 Toulouse</p>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <span class="bg-orange-500 text-white px-2 py-0.5 rounded text-xs font-bold">L1</span>
+                                    <span
+                                        class="bg-orange-500 text-white px-2 py-0.5 rounded text-xs font-bold">L1</span>
                                     <span class="bg-pink-500 text-white px-2 py-0.5 rounded text-xs font-bold">70</span>
                                     <span class="text-xs">Arrêt "Cité Madrid"</span>
                                 </div>
@@ -569,11 +601,13 @@
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-feather="phone" class="w-5 h-5 text-blue-400"></i>
-                            <a href="tel:0561234567" class="text-gray-400 hover:text-white transition-colors">05 61 23 45 67</a>
+                            <a href="tel:0561234567" class="text-gray-400 hover:text-white transition-colors">07 56 91
+                                65 93</a>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-feather="mail" class="w-5 h-5 text-blue-400"></i>
-                            <a href="mailto:contact@reparephone-toulouse.fr" class="text-gray-400 hover:text-white transition-colors break-all">contact@reparephone-toulouse.fr</a>
+                            <a href="mailto:contact@reparephone-toulouse.fr"
+                                class="text-gray-400 hover:text-white transition-colors break-all">contact@reparephone-toulouse.fr</a>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-feather="clock" class="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"></i>
@@ -584,7 +618,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Réseaux sociaux et CTA -->
                 <div>
                     <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -592,25 +626,29 @@
                         Suivez-nous
                     </h4>
                     <div class="flex gap-4 mb-6">
-                        <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-500/30 transition-all transform hover:scale-110 border border-white/10 hover:border-blue-400/50">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-500/30 transition-all transform hover:scale-110 border border-white/10 hover:border-blue-400/50">
                             <i data-feather="facebook" class="w-6 h-6 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-pink-500/30 transition-all transform hover:scale-110 border border-white/10 hover:border-pink-400/50">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-pink-500/30 transition-all transform hover:scale-110 border border-white/10 hover:border-pink-400/50">
                             <i data-feather="instagram" class="w-6 h-6 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-400/30 transition-all transform hover:scale-110 border border-white/10 hover:border-blue-400/50">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-400/30 transition-all transform hover:scale-110 border border-white/10 hover:border-blue-400/50">
                             <i data-feather="twitter" class="w-6 h-6 text-white"></i>
                         </a>
                     </div>
-                    <a href="index.html" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg transform hover:scale-105 w-full text-center">
+                    <a href="index.html"
+                        class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg transform hover:scale-105 w-full text-center">
                         ✨ Retour à l'accueil
                     </a>
                 </div>
             </div>
-            
+
             <!-- Séparateur -->
             <div class="border-t border-white/10 my-8"></div>
-            
+
             <!-- Bottom Bar -->
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="text-gray-400 text-sm">
@@ -618,21 +656,22 @@
                 </div>
                 <div class="flex flex-wrap gap-6 text-sm">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions légales</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de
+                        confidentialité</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">CGV</a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <script>
         feather.replace();
-        
+
         // Create particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             if (!particlesContainer) return;
-            
+
             const particleCount = window.innerWidth < 768 ? 15 : 30;
             const colors = [
                 'rgba(59, 130, 246, 0.6)',
@@ -640,7 +679,7 @@
                 'rgba(236, 72, 153, 0.6)',
                 'rgba(6, 182, 212, 0.6)'
             ];
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
@@ -653,22 +692,22 @@
                 particlesContainer.appendChild(particle);
             }
         }
-        
+
         // Tab functionality
         document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', () => {
                 const tabId = button.getAttribute('data-tab');
-                
+
                 // Remove active class from all buttons and contents
                 document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                
+
                 // Add active class to clicked button and corresponding content
                 button.classList.add('active');
                 document.getElementById(tabId).classList.add('active');
             });
         });
-        
+
         // Mouse tracking for boutique cards
         document.querySelectorAll('.boutique-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
@@ -679,10 +718,10 @@
                 card.style.setProperty('--mouse-y', y + '%');
             });
         });
-        
+
         // Initialize
         createParticles();
-        
+
         // Reinitialize icons after tab switch
         document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', () => {
@@ -691,5 +730,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
